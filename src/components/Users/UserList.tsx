@@ -32,7 +32,7 @@ const UserList: React.FC = () => {
 
   const fetchUsers = async () => {
     try {
-      const response = await axios.get('http://localhost:3001/api/users');
+      const response = await axios.get('/api/users');
       setUsers(response.data);
     } catch (error) {
       console.error('Error fetching users:', error);
@@ -43,7 +43,7 @@ const UserList: React.FC = () => {
 
   const handleEditUser = async (userData: any) => {
     try {
-      await axios.put(`http://localhost:3001/api/users/${editingUser?.id}`, userData);
+      await axios.put(`/api/users/${editingUser?.id}`, userData);
       await fetchUsers(); // Refresh the user list
       setEditingUser(null);
     } catch (error) {
@@ -55,7 +55,7 @@ const UserList: React.FC = () => {
   const handleDeleteUser = async (userId: string) => {
     if (window.confirm('Are you sure you want to delete this user?')) {
       try {
-        await axios.delete(`http://localhost:3001/api/users/${userId}`);
+        await axios.delete(`/api/users/${userId}`);
         setUsers(users.filter(user => user.id !== userId));
       } catch (error) {
         console.error('Error deleting user:', error);
