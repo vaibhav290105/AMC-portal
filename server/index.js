@@ -37,7 +37,7 @@ app.get('/api/health', (req, res) => {
 });
 
 // Serve React frontend in production
-const clientPath = path.join(__dirname, '../client/dist');
+const clientPath = path.join(__dirname, '../dist');  // ✅ correct path
 app.use(express.static(clientPath));
 
 app.get('*', (req, res) => {
