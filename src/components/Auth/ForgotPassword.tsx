@@ -3,9 +3,7 @@ import { Mail, Send, AlertCircle, CheckCircle, ArrowLeft } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import logo from "../../../assets/igl-logo.png";
 
-const API_BASE = import.meta.env.PROD
-  ? `${import.meta.env.VITE_BACKEND_URL}/api`
-  : '/api';
+const API_BASE = '/api';
 
 function ForgotPasswordPage() {
   const navigate = useNavigate();
