@@ -54,7 +54,7 @@ router.post("/register", async (req, res) => {
     });
 
     // Generate JWT
-    const token = jwt.sign({ userId: user.id }, process.env.JWT_SECRET, {
+    const token = jwt.sign({ userId: user.id }, 'amc-secret-2025', {
       expiresIn: "7d",
     });
 
@@ -86,7 +86,7 @@ router.post("/login", async (req, res) => {
     }
 
     // Generate JWT
-    const token = jwt.sign({ userId: user.id }, process.env.JWT_SECRET, {
+    const token = jwt.sign({ userId: user.id }, 'amc-secret-2025', {
       expiresIn: "7d",
     });
 
