@@ -59,7 +59,7 @@ const ContractForm: React.FC = () => {
   const fetchContract = async () => {
     try {
       setLoading(true);
-      const response = await axios.get(`http://localhost:3001/api/contracts/${id}`);
+      const response = await axios.get(`/api/contracts/${id}`);
       const contract = response.data;
       
       setFormData({
@@ -87,7 +87,7 @@ const ContractForm: React.FC = () => {
 
   const fetchUsers = async () => {
     try {
-      const response = await axios.get('http://localhost:3001/api/users');
+      const response = await axios.get('/api/users');
       // Filter users based on current user's role
       let filteredUsers = response.data;
       if (user?.role === 'MANAGER') {
@@ -114,7 +114,7 @@ const ContractForm: React.FC = () => {
 
     try {
       if (isEditing) {
-        await axios.put(`http://localhost:3001/api/contracts/${id}`, formData);
+        await axios.put(`/api/contracts/${id}`, formData);
       } else {
         await axios.post('http://localhost:3001/api/contracts', formData);
       }
