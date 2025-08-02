@@ -5,7 +5,7 @@ import logo from "../../../assets/igl-logo.png";
 
 const API_BASE = import.meta.env.PROD
   ? `${import.meta.env.VITE_BACKEND_URL}/api`
-  : "http://localhost:3001/api";
+  : '/api';
 
 function ForgotPasswordPage() {
   const navigate = useNavigate();
