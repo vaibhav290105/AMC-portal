@@ -116,7 +116,7 @@ const ContractForm: React.FC = () => {
       if (isEditing) {
         await axios.put(`/api/contracts/${id}`, formData);
       } else {
-        await axios.post('http://localhost:3001/api/contracts', formData);
+        await axios.post('/api/contracts', formData);
       }
       navigate('/contracts');
     } catch (error: any) {
