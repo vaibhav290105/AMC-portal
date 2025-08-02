@@ -53,7 +53,7 @@ const ContractList: React.FC = () => {
 
   const fetchContracts = async () => {
     try {
-      const response = await axios.get('http://localhost:3001/api/contracts');
+      const response = await axios.get('/api/contracts');
       setContracts(response.data);
     } catch (error) {
       console.error('Error fetching contracts:', error);
@@ -65,7 +65,7 @@ const ContractList: React.FC = () => {
   const handleDelete = async (id: string) => {
     if (window.confirm('Are you sure you want to delete this contract?')) {
       try {
-        await axios.delete(`http://localhost:3001/api/contracts/${id}`);
+        await axios.delete(`/api/contracts/${id}`);
         setContracts(contracts.filter(contract => contract.id !== id));
       } catch (error) {
         console.error('Error deleting contract:', error);
