@@ -51,7 +51,7 @@ const PurchaseOrderList: React.FC = () => {
 
   const fetchPurchaseOrders = async () => {
     try {
-      const response = await axios.get('http://localhost:3001/api/purchase-orders');
+      const response = await axios.get('/api/purchase-orders');
       setPurchaseOrders(response.data);
     } catch (error) {
       console.error('Error fetching purchase orders:', error);
@@ -63,7 +63,7 @@ const PurchaseOrderList: React.FC = () => {
   const handleDelete = async (id: string) => {
     if (window.confirm('Are you sure you want to delete this purchase order?')) {
       try {
-        await axios.delete(`http://localhost:3001/api/purchase-orders/${id}`);
+        await axios.delete(`/api/purchase-orders/${id}`);
         setPurchaseOrders(purchaseOrders.filter(po => po.id !== id));
       } catch (error) {
         console.error('Error deleting purchase order:', error);
