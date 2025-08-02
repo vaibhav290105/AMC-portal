@@ -114,7 +114,7 @@ const transporter = nodemailer.createTransport({
   secure: false,
   auth: {
     user: "vaibhavgupta290105@gmail.com",
-    pass: wsql tcfy xvun nmxy,
+    pass: "wsqltcfyxvunnmxy",
   },
 });
 
