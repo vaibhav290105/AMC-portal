@@ -10,7 +10,7 @@ export const authenticateToken = async (req, res, next) => {
   }
 
   try {
-    const decoded = jwt.verify(token, any-strong-random-secret-like-amc-secret-2025);
+    const decoded = jwt.verify(token, 'amc-secret-2025');
     const user = await prisma.user.findUnique({
       where: { id: decoded.userId },
       select: { id: true, email: true, name: true, role: true, department: true , emailPreference: true }
