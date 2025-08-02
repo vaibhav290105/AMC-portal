@@ -39,7 +39,7 @@ const Profile: React.FC = () => {
     setSuccess('');
 
     try {
-      const response = await axios.put('http://localhost:3001/api/users/profile', formData);
+      const response = await axios.put('/api/users/profile', formData);
       updateUser(response.data);
       setSuccess('Profile updated successfully!');
     } catch (error: any) {
