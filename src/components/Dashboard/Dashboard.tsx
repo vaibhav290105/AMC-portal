@@ -34,8 +34,8 @@ const Dashboard: React.FC = () => {
     const fetchStats = async () => {
       try {
         const [contractsResponse, poResponse] = await Promise.all([
-          axios.get('http://localhost:3001/api/contracts/stats/dashboard'),
-          axios.get('http://localhost:3001/api/purchase-orders/stats/dashboard')
+          axios.get('/api/contracts/stats/dashboard'),
+          axios.get('/api/purchase-orders/stats/dashboard')
         ]);
         
         setStats({
