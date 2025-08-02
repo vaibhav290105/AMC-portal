@@ -51,7 +51,7 @@ const PurchaseOrderForm: React.FC = () => {
   const fetchPurchaseOrder = async () => {
     try {
       setLoading(true);
-      const response = await axios.get(`http://localhost:3001/api/purchase-orders/${id}`);
+      const response = await axios.get(`/api/purchase-orders/${id}`);
       const po = response.data;
       
       setFormData({
@@ -75,7 +75,7 @@ const PurchaseOrderForm: React.FC = () => {
 
   const fetchUsers = async () => {
     try {
-      const response = await axios.get('http://localhost:3001/api/users');
+      const response = await axios.get('/api/users');
       // Filter users based on current user's role
       let filteredUsers = response.data;
       if (user?.role === 'MANAGER') {
@@ -102,9 +102,9 @@ const PurchaseOrderForm: React.FC = () => {
 
     try {
       if (isEditing) {
-        await axios.put(`http://localhost:3001/api/purchase-orders/${id}`, formData);
+        await axios.put(`/api/purchase-orders/${id}`, formData);
       } else {
-        await axios.post('http://localhost:3001/api/purchase-orders', formData);
+        await axios.post('/api/purchase-orders', formData);
       }
       navigate('/purchase-orders');
     } catch (error: any) {
